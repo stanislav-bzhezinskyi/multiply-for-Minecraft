@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- <script src="/script.js" defer></script> -->
+  <title>Multiply</title>
+</head>
+<body class="body">
+  <div class="result_container disabled" >
+    <p class="result"></p>
+    <button class="restart_button">Restart</button>
+  </div>
+  <div class="main_container">
+    <h1 class="title">If you wanna play Minecraft - multiply!</h1>
+    <div class="exercise_space">
+      <div class="exercise_container">
+        <p class="exercise"></p>
+        <input class="input"/>
+      </div>
+      <button class="btn">CHECK</button>
+      <div class="daddy_container">
+        <img src="./image/daddy_happy.jpeg" class="daddy_happy daddys_image " alt="daddy_happy">
+        <img src="./image/daddy_sad.jpg" class="daddy_disapointed daddys_image disabled" alt="daddy_sad">
+        <p class="daddys_line">Ok, lets start it!</p>
+      </div>
+    </div>
+    <div class="footer">
+      <p class="correctAnsw">Correct:</p>
+      <p class="wrongAnsw">Wrong:</p>
+    </div>
+  </div>
+</body>
+<style>
+
+  /* body */
+
+  @media screen and (min-width: 320px) {
+    .body {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      margin: 0;
+      background-color:rgb(127, 117, 172);
+      height: 100vh;
+      font-family: 'Press Start 2P', cursive;
+      box-sizing: border-box;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .body {
+      padding: 20px;
+    }
+  }
+
+  /* main container */
+
+  @media screen and (min-width: 320px) {
+    .main_container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      background-image: url(./image/International_Day_of_Math.png);
+      background-position: center;
+      background-size: cover;
+      box-sizing: border-box;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .main_container {
+      display: flex;
+    }
+  }
+
+  /* title */
+
+  @media screen and (min-width: 320px) {
+    .title {
+      text-align: center;
+      color: rgb(255, 255, 255);
+      background-color: brown;
+      padding: 2px;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    .title {
+      padding: 5px;
+      font-size: 21px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .title {
+      line-height: 1.5;
+      font-size: 27px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .title {
+      line-height: 1.2;
+      font-size: 31px;
+    }
+  }
+
+/* correct Answer */
+
+  @media screen and (min-width: 320px) {
+    .correctAnsw {
+      font-size: 11px;
+      color: white;
+      padding: 15px;
+      background-color: yellowgreen;
+      width: 190px;
+      height: 25px;
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    .correctAnsw {
+      font-size: 21px;
+      width: 250px;
+    }
+  }
+
+/* wrongAnswer */
+
+  @media screen and (min-width: 320px) {
+    .wrongAnsw {
+      font-size: 11px;
+      color: white;
+      padding: 15px;
+      background-color: rgb(196, 3, 3);
+      width: 190px;
+      height: 25px;
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    .wrongAnsw {
+      font-size: 21px;
+      width: 250px;
+    }
+  }
+
+  /* footer */
+
+  @media screen and (min-width: 320px) {
+    .footer {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  /* exercise space */
+
+  @media screen and (min-width: 320px) {
+    .exercise_space {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      background-color: aqua;
+      height: 500px;
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .exercise_space {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+    }
+  }
+
+  /* exercise container */
+
+  @media screen and (min-width: 320px) {
+    .exercise_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  /* @media screen and (min-width: 1024px) {
+    .exercise_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  } */
+
+  /* exercise */
+
+  @media screen and (min-width: 320px) {
+    .exercise {
+      font-family:'Courier New', Courier, monospace;
+      font-weight: bold;
+      font-size: 35px;
+      color: white;
+      margin-right: 15px;
+      text-shadow: rgb(0, 0, 0, 0.3) 1px 2px;
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    .exercise {
+      font-family:'Courier New', Courier, monospace;
+      font-size: 54px;
+      margin-right: 30px;
+      text-shadow: rgb(0, 0, 0, 0.5) 2px 3px;
+    }
+  }
+
+  /* input */
+
+  @media screen and (min-width: 320px) {
+    .input {
+      text-align: center;
+      color: white;
+      font-size: 28px;
+      width: 50px;
+      height: 30px;
+      background-color: brown;
+      margin: 0;
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    .input {
+      font-size: 45px;
+      width: 75px;
+      height: 50px;
+      margin: 0 40px 0 0;
+    }
+  }
+
+  .input:focus {
+    outline: none;
+  }
+
+  /*  button  */
+
+  @media screen  and (min-width: 320px){
+    .btn {
+      height: 40px;
+      width: 100px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: rgb(0, 0, 0, 0.2) 2px 3px;
+      font-size: 15px;
+      color: white;
+      background-color: goldenrod;
+      transition: 0.2s;
+      margin: 0 0 20px 0;
+    }
+  }
+
+  @media screen  and (min-width: 1024px){
+    .btn {
+      height: 60px;
+      width: 150px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: rgb(0, 0, 0, 0.2) 2px 3px;
+      font-size: 25px;
+      color: white;
+      background-color: goldenrod;
+      transition: 0.2s;
+      margin: 0 100px 0 0;
+    }
+  }
+
+  .btn:hover {
+    transform: scale(1.1)
+  }
+
+  /* daddy container */ 
+
+  @media screen and (min-width: 320px){
+    .daddy_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  @media screen and (min-width: 1024px){
+    .daddy_container {
+      flex-direction: row;
+    }
+  }
+
+  /* daddy image */
+
+  @media screen and (min-width: 320px){
+    .daddys_image {
+      display: none;
+      border-radius: 100%;
+      width: 70px;
+      margin: 0 20px 0 0;
+    }
+  }
+
+  @media screen and (min-width: 768px){
+    .daddys_image {
+      display: block;
+      border-radius: 100%;
+      width: 70px;
+      margin: 0 20px 0 0;
+    }
+  }
+
+
+  /* daddys line */
+
+  @media screen and (min-width: 320px){
+    .daddys_line {
+      font-size: 11px;
+      color: black;
+      line-height: 2;
+      height: 100%;
+      width: 280px;
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 1024px){
+    .daddys_line {
+      font-size: 16px;
+      color: black;
+      line-height: 2;
+      width: 250px;
+    }
+  }
+
+  /* result container */
+
+  @media screen and (min-width: 320px){
+    .result_container {
+      position: absolute;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      align-self: center;
+      width: 100%;
+      height: 100vh;
+      background-color: rgb(111, 111, 255);
+      z-index: 2;
+      box-sizing: border-box;
+    }
+  }
+
+  @media screen and (min-width: 640px){
+    .result_container {
+      padding: 130px;
+      position: absolute;
+    }
+  }
+
+  /* result */
+
+  @media screen and (min-width: 640px){
+    .result {
+      font-size: 14px;
+      line-height: 3;
+      margin-bottom: 40px;
+    }
+  }
+
+  @media screen and (min-width: 1024px){
+    .result {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 26px;
+      line-height: 2;
+      width: 1024px;
+      height: 100%;
+      margin-bottom: 40px;
+    }
+  }
+
+  .disabled {
+    display: none;
+  }
+
+  .restart_button {
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  const body = document.querySelector('.body');
+  const exercise = body.querySelector('.exercise');
+  const appFirst = numCreate();
+  const appSecond = numCreate();
+  const button = document.querySelector('.btn');
+  const input = document.querySelector('.input');
+  const correctAnswer = document.querySelector('.correctAnsw');
+  const wrongAnswer = document.querySelector('.wrongAnsw');
+  const result = document.querySelector('.result');
+  const resultContainer = document.querySelector('.result_container');
+  const restart_button = document.querySelector('.restart_button');
+  const daddys_lines = document.querySelector('.daddys_line');
+  const standart_phrases = ['I believe in you!', 'You can do it!', "Luke, I'm your father!", "You're a smart boy", 'Just do it!'];
+  const good_phrases = ['Yes!!! Good job! Keep going!', 'Correct answer!', "That's my boy!", "Great! I'm so proud of you!"];
+  const disapointed_phrases = ['No! Thats wrong unswer.', 'What??? Oh, come on, Luka... ', "Wrong!", "That's not funny!", "I think you should better know how to multiply!"];
+  const daddy_happy = document.querySelector('.daddy_happy');
+  const daddy_disapointed = document.querySelector('.daddy_disapointed');
+
+  function standartPhrases() {
+    daddys_lines.innerHTML = standart_phrases[+Math.floor(Math.random() * standart_phrases.length)];
+  }
+
+  function goodPhrases() {
+    daddy_happy.className = 'daddy_happy daddys_image';
+    daddy_disapointed.className = 'daddy_disapointed daddys_image disabled';
+    daddys_lines.innerHTML = good_phrases[+Math.floor(Math.random() * good_phrases.length)];
+  }
+
+  function disapointedPhrases() {
+    daddy_happy.className = 'daddy_happy daddys_image disabled';
+    daddy_disapointed.className = 'daddy_disapointed daddys_image';
+    daddys_lines.innerHTML = disapointed_phrases[+Math.floor(Math.random() * disapointed_phrases.length)];
+  }
+
+  setInterval(() => {
+    standartPhrases();
+  }, 15000);
+
+  let correct = 0;
+  let wrong = 0;
+  let countingBody;
+
+  function numCreate() {
+    return Math.floor(Math.random() * 10)
+  }
+
+  function newExercise() {
+    const appFirst = numCreate();
+    const appSecond = numCreate();
+    countingBody = appFirst * appSecond;
+    return exercise.innerHTML=`${appFirst} * ${appSecond} = `
+  }
+
+  correctAnswer.innerHTML = `Correct: ${correct}`
+  wrongAnswer.innerHTML = `Wrong: ${wrong}`
+  exercise.innerHTML=`${newExercise()}`
+
+  button.addEventListener('click', () => {
+    if (input.value === '') {
+      alert('please input answer');
+    }
+
+    if (countingBody === +input.value && typeof(+input.value) === 'number') {
+      correct++
+      correctAnswer.innerHTML = `Correct: ${correct}`
+      wrongAnswer.innerHTML = `Wrong: ${wrong}`
+      goodPhrases();
+      newExercise();
+    } else {
+      wrong++
+      wrongAnswer.innerHTML = `Wrong: ${wrong}`
+      disapointedPhrases();
+      newExercise();
+    }
+
+    if (correct + wrong === 10) {
+      getResult ();
+    }
+
+    input.value = '';
+    input.focus();
+  })
+
+  function getResult () {
+    resultContainer.className = 'result_container'
+
+    switch (correct) {
+      case 10:
+        result.innerHTML = `Congratulation! You have ${correct} correct answers, so that means, you can play Minecraft for 40 minutes`;
+      break;
+
+      case 9:
+        result.innerHTML = `Congratulation! You have ${correct} correct answers. That means, you can play minecraft for 35 min`;
+      break;
+
+      case 8:
+        result.innerHTML = `Good job! You have ${correct} correct answers. That means, you can play minecraft for 30 min`;
+      break;
+
+      case 7:
+        result.innerHTML = `Not bad! You have ${correct} correct answers. That means, you can play minecraft for 20 min`;
+      break;
+
+      case 6:
+        result.innerHTML = `Whooff! You have ${correct} correct answers. That means, you can play minecraft for 15 min`;
+      break;
+
+      case 5:
+        result.innerHTML = `Well... you have ${correct}correct answers. That means, you can't play minecraft today. Keep practicing!`;
+      break;
+
+      case 4:
+        result.innerHTML = `So sad! You have ${correct}correct answers. That means, you can't play minecraft today. Keep practicing!`;
+      break;
+
+      case 3:
+        result.innerHTML = `So sad! You have ${correct}correct answers. That means, you can't play minecraft today. Keep practicing!`;
+      break;
+
+      case 2:
+        result.innerHTML = `So sad! You have ${correct}correct answers. That means, you can't play minecraft today. Keep practicing!`;
+      break;
+
+      case 1:
+        result.innerHTML = `Too bad! You have ${correct} correct answer. No Minecraft today`;
+      break;
+
+      default:
+        result.innerHTML = `Noooooo!!! No Minecraft forever!`
+      break;
+    }
+  }
+
+  restart_button.addEventListener('click', () => {
+    location.reload()
+  })
+</script>
+</html>
